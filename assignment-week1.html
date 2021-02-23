@@ -2,55 +2,129 @@
 <html>
 <head>
 <meta charset="utf-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <title>My Website</title>
 <style>
   .head{
-    background-color:white;color:black;font-weight:bold;font-size:20px;padding:10px;
+    background-color:white;
+	color:black;
+	font-weight:bold;
+	font-size:20px;
+	padding:10px;
   }
   .head2{
-    background-color:#87cefa;color:black;font-weight:bold;font-size:40px;padding:126px;text-align:center;
+    background-color:#87cefa;
+	color:black;
+	font-weight:bold;
+	font-size:40px;
+	padding:126px;
+	text-align:center;
   }
   .photo{
-    width:1200px;margin-left:auto;margin-right:auto;margin-top:50px;margin-bottom:200px;
+    width:1200px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:80px;
+	margin-bottom:200px;
   }
   .picture{
-    width:280px;background-color:#87cefa;text-align:center;
-    display:inline-block;vertical-align:top;
+    width:240px;
+	padding:10px;
+	text-align:center;
+    display:inline-block;
+	vertical-align:top;
   }
   img{
 	max-height: 100%;  
     max-width: 100%; 
   }
+    nav{
+	display:flex;
+  }
+  nav>.mywebsite{
+	flex:auto;
+	background-color:white;
+	font-weight:bold;
+	font-size:20px;
+	padding:10px;
+  }
+  nav>.item{
+	flex:none;
+	width:80px;
+	font-size:20px;
+	padding:10px;
+	background-color:white
+  }
+  @media screen and (max-width:1200px){
+	.photo{width:100%;text-align:center;}
+  }
+  nav{
+	display:flex;
+  }
+  nav>.mywebsite{
+	flex:auto;
+	background-color:white;
+	font-weight:bold;
+	font-size:20px;
+	padding:10px;
+  }
+  main{
+	display:flex;
+  }
+  main>.item{
+	flex:none;
+	width:80px;
+	font-size:20px;
+	padding:10px;
+	background-color:white
+  }
 </style>
 </head>
-<body style=margin:0px;>
-<div class="head">My Website</div>
+<body style=margin:0px>
+<nav>
+	<div class="mywebsite">My Website</div>
+	<main>
+		<div class="item">Item 1</div>
+		<div class="item">Item 2</div>
+		<div class="item">Item 3</div>
+		<div class="item">Item 4</div>
+	</main>
+</nav>
 <div class="head2">Welcome to MyHome</div>
 <div class="photo">
     <div class="picture">
-      <img src="february.jpg"></img>
-      <div>二月壁紙</div></div>
+      <div style="background-color:#87cefa">
+	  <img src="february.jpg"></img>
+	  二月壁紙</div></div>
     <div class="picture">
+	  <div style="background-color:#87cefa">
       <img src="january.jpg"></img>
-      <div>一月壁紙</div></div>
+	  一月壁紙</div></div>
     <div class="picture">
-      <img src="december.jpg"></img>
-      <div>十二月壁紙</div></div>
+      <div style="background-color:#87cefa">
+	  <img src="december.jpg"></img>
+      十二月壁紙</div></div>
     <div class="picture">
-      <img src="november.jpg"></img>
-      <div>十一月壁紙</div></div>
+      <div style="background-color:#87cefa">
+	  <img src="november.jpg"></img>
+      十一月壁紙</div></div>
     <div class="picture">
-      <img src="october.jpg"></img>
-      <div>十月壁紙</div></div>
+      <div style="background-color:#87cefa">
+	  <img src="october.jpg"></img>
+      十月壁紙</div></div>
     <div class="picture">
-      <img src="september.jpg"></img>
-      <div>九月壁紙</div></div>
+      <div style="background-color:#87cefa">
+	  <img src="september.jpg"></img>
+      九月壁紙</div></div>
     <div class="picture">
-      <img src="august.jpg"></img>
-      <div>八月壁紙</div></div>
+      <div style="background-color:#87cefa">
+	  <img src="august.jpg"></img>
+      八月壁紙</div></div>
     <div class="picture">
-      <img src="july.jpg"></img>
-      <div>七月壁紙</div></div>
+      <div style="background-color:#87cefa">
+	  <img src="july.jpg"></img>
+      七月壁紙</div></div>
   </div>
 </body>
 </html>
