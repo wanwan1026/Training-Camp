@@ -21,19 +21,32 @@
 			margin-top:80px;
 			margin-bottom:200px;
 		}
-		.picture{
-			width:240px;
-			padding:10px;
-			text-align:center;
-			display:inline-block;
-			vertical-align:top;
-		}
 		img{
 			max-height: 100%;  
 			max-width: 100%; 
 		}
-		@media screen and (max-width:1200px){
+		
+		main{
+			display:flex;
+			flex-wrap:wrap;
+			justify-content:center;
+		}
+		main>.picture{
+			flex:none;
+			width:240px;
+			margin:10px;
+		}
+		@media (max-width:1200px){
 			.photo{width:100%;text-align:center;}
+			main>.picture{
+				width:45%;
+			}
+		}
+		@media (max-width:600px){
+			.photo{width:100%;text-align:center;}
+			main>.picture{
+				width:90%;
+			}
 		}
 		
 		#menu_control{
@@ -79,8 +92,8 @@
 		}
 		nav{
 			width:100%;
-			height:40vh;
-			background-color:#ccc;
+			height:30vh;
+			background-color:#afdfe4;
 			position:absolute;
 			top:50px;
 			left:-100%;
@@ -135,46 +148,32 @@
 	
 	<div class="head2">Welcome to MyHome</div>
 	<div class="photo">
-		<div class="picture">
-			<div style="background-color:#87cefa">
+		<main>
+			<div style="background-color:#87cefa" class="picture">
 				<img src="february.jpg"></img>二月壁紙
 			</div>
-		</div>
-		<div class="picture">
-			<div style="background-color:#87cefa">
-				<img src="january.jpg"></img>一月壁紙
+			<div style="background-color:#87cefa" class="picture">
+				<img src="january.jpg""></img>一月壁紙
 			</div>
-		</div>
-		<div class="picture">
-			<div style="background-color:#87cefa">
+			<div style="background-color:#87cefa" class="picture">
 				<img src="december.jpg"></img>十二月壁紙
 			</div>
-		</div>
-		<div class="picture">
-			<div style="background-color:#87cefa">
+			<div style="background-color:#87cefa" class="picture">
 				<img src="november.jpg"></img>十一月壁紙
 			</div>
-		</div>
-		<div class="picture">
-			<div style="background-color:#87cefa">
+			<div style="background-color:#87cefa" class="picture">
 				<img src="october.jpg"></img>十月壁紙
 			</div>
-		</div>
-		<div class="picture">
-			<div style="background-color:#87cefa">
+			<div style="background-color:#87cefa" class="picture">
 				<img src="september.jpg"></img>九月壁紙
 			</div>
-		</div>
-		<div class="picture">
-			<div style="background-color:#87cefa">
+			<div style="background-color:#87cefa" class="picture">
 				<img src="august.jpg"></img>八月壁紙
 			</div>
-		</div>
-		<div class="picture">
-			<div style="background-color:#87cefa">
+			<div style="background-color:#87cefa" class="picture">
 				<img src="july.jpg"></img>七月壁紙
 			</div>
-		</div>
+		</main>
 	</div>
 </body>
 </html>
