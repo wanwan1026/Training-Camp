@@ -41,13 +41,19 @@ avg({
 # 要求三
 def maxProduct(nums):
         a=0
-        b=0    
-        for i in nums:
-            if i > a :
-                a=i
-            elif b < i < a :
-                b=i           
-        print(a*b,"因為",a,"和",b,"相乘得到最大值")        
+        b=nums[0]*nums[1]
+        one=0
+        two=0
+        for i in range(0,len(nums)):
+            for j in range(0,len(nums)):
+                if i < j :
+                    a=nums[i]*nums[j]
+                    if b > a :
+                        continue
+                    b=nums[i]*nums[j]
+                    one=nums[i]
+                    two=nums[j]
+        print(b,"因為",one,"和",two,"相乘得到最大值")        
 # 請用你的程式補完這個函式的區塊
 maxProduct([5, 20, 2, 6]) # 得到 120 因為 20 和 6 相乘得到最大值
 maxProduct([10, -20, 0, 3]) # 得到 30 因為 10 和 3 相乘得到最大值
