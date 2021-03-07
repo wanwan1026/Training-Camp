@@ -78,7 +78,7 @@ def maxZeros(nums):
     sum=0
     for i in nums:
         if i == 0 :
-            a=a+1+i
+            a=a+1
             b=a
             if b > sum :
                 sum=b
