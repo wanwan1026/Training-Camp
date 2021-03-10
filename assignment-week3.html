@@ -156,14 +156,14 @@
         </main>
 		<script type="text/javascript">
 			function getdata(){
-				var req=new XMLHttpRequest();
+				let req=new XMLHttpRequest();
 				req.open("get","https://padax.github.io/taipei-day-trip-resources/taipei-attractions.json");
 				req.onload=function(){
-					var myphoto = document.getElementById("photo");
-					var newdiv = document.createElement("div");
-					var newimg = document.createElement("img");
-					var imgfile = newimg.setAttribute("src","february.jpg");
-					var text = document.createTextNode("hello world");
+					let myphoto = document.getElementById("photo");
+					let newdiv = document.createElement("div");
+					let newimg = document.createElement("img");
+					let imgfile = newimg.setAttribute("src","february.jpg");
+					let text = document.createTextNode("hello world");
 					newdiv.className = "content"
 					newdiv.appendChild(newimg);
 					newdiv.appendChild(text);
