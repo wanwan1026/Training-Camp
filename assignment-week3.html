@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>myweb!!!</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="device-width,initial-scale=1,maximum-scale=1"/>
+        <style>
+            .body{
+                margin:0px; 
+            }
+            .header{
+		    	background-color:white; 
+	    		height:50px; 
+	    		position:relative; 
+	    	}
+            #menu_ctrl{
+		    	position:absolute;
+                opacity: 0; 
+	    	}
+            .menu_btn{
+		    	width:40px;
+		    	height:40px; 
+		    	background-color:white;
+		    	display:block; 
+		    	position:absolute; 
+		    	top:5px; 
+		    	right:10px;
+	    	}
+            .menu_btn span{
+		    	opacity:0;
+		    }
+            .menu_btn::before{
+		    	content:''; 
+		    	position:absolute; 
+		    	height:2px;
+		    	left:2px;
+		    	width:36px;
+                top:0;
+		    	bottom:0;
+		    	background-color:#000; 
+		    	margin:auto;
+		    	box-shadow:0px 8px 0px #000,
+		    	           0px -8px 0px #000; 
+	    	}
+            nav{
+		    	width:100%;
+		    	height:30vh; 
+		    	background-color:#afdfe4;
+		    	position:absolute; 
+		    	top:50px;
+		    	left:-100%; 
+		    }
+            nav li{
+			    display:block; 
+		    	text-decoration:none; 
+		    	color:black;
+		    	padding:10px 20px; 
+		    	text-align:center;
+		    }
+            #menu_ctrl:checked ~ .header nav{
+			    left:0;
+	    	}
+            @media screen and (min-width:600px){
+			    .menu_btn{display:none;} 
+		    	.header{
+			    	display:flex; 
+			    	justify-content:space-between;
+			    }
+			    nav{
+			    	position:relative;
+			    	left:0;
+			    	display:flex;
+			    	width:auto;
+			    	height:auto;
+			    	top:0;
+			    	background-color:transparent;
+			    	padding:10px;
+			    }
+		    }
+            .logo{
+		    	background-color:white; 
+		    	font-weight:bold; 
+		    	font-size:20px; 
+		    	padding:10px; 
+		    	text-align:top; 
+                margin:0px; 
+	    	}
+            .banner{
+		    	background-color:#87cefa; 
+		    	color:black; 
+		       	font-weight:bold; 
+		    	font-size:40px; 
+		    	padding:126px; 
+			    text-align:center; 
+		    }
+            .main{
+                width:1200px;
+		    	text-align:center; 
+	    		margin-left:auto; 
+		    	margin-right:auto;
+		    	margin-top:80px; 
+		    	margin-bottom:200px; 
+            }
+            main{
+			    display:flex; 
+			    flex-wrap:wrap; 
+			    justify-content:center;
+		    }
+		    main>.content{
+			    flex:none; 
+                width:240px; 
+			    margin:10px;
+		    }
+            img{
+			    max-height: 100%; 
+			    max-width: 100%; 
+	    	}
+            @media (max-width:1200px){
+                .main{width:100%;} 
+			    main>.content{
+				    width:45%; 
+			    }
+		    }
+		    @media (max-width:600px){
+			    .main{width:100%;}
+		    	main>.content{
+			    	width:90%;
+		    	}
+	    	}
+        </style>
+    </head>
+    <body class="body" onload="getdata();">
+        <input type="checkbox" name="" id="menu_ctrl">
+        <header class="header">
+            <h1 class="logo">
+                <a>My Website</a>
+            </h1>
+            <label class="menu_btn" for="menu_ctrl">
+                <span>選單</span>
+            </label>
+            <nav>
+                <li>Item1</li>
+                <li>Item2</li>
+                <li>Item3</li>
+                <li>Item4</li>
+            </nav>
+        </header>
+        <section>    
+            <div class="banner">
+                <h2 onclick="getdata();">Welcome to MyHome</h2>
+            </div>
+        </section>
+        <main class="main" id="photo">
+            <!-- <div class="content">
+                <img src="february.jpg"></img>二月壁紙</div> -->
+        </main>
+		<script type="text/javascript">
+			function getdata(){
+				var req=new XMLHttpRequest();
+				req.open("get","https://padax.github.io/taipei-day-trip-resources/taipei-attractions.json");
+				req.onload=function(){
+					var myphoto = document.getElementById("photo");
+					var newdiv = document.createElement("div");
+					var newimg = document.createElement("img");
+					var imgfile = newimg.setAttribute("src","february.jpg");
+					var text = document.createTextNode("hello world");
+					newdiv.className = "content"
+					newdiv.appendChild(newimg);
+					newdiv.appendChild(text);
+					myphoto.appendChild(newdiv);
+				};
+				req.send();
+			}
+		</script>
+    </body>
+</html>
