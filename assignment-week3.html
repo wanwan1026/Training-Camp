@@ -147,7 +147,7 @@
         </header>
         <section>    
             <div class="banner">
-                <h2 onclick="getdata();">Welcome to MyHome</h2>
+                <h2>Welcome to MyHome</h2>
             </div>
         </section>
         <main class="main" id="photo">
@@ -156,20 +156,31 @@
         </main>
 		<script type="text/javascript">
 			function getdata(){
-				let req=new XMLHttpRequest();
-				req.open("get","https://padax.github.io/taipei-day-trip-resources/taipei-attractions.json");
-				req.onload=function(){
-					let myphoto = document.getElementById("photo");
-					let newdiv = document.createElement("div");
-					let newimg = document.createElement("img");
-					let imgfile = newimg.setAttribute("src","february.jpg");
-					let text = document.createTextNode("hello world");
-					newdiv.className = "content"
-					newdiv.appendChild(newimg);
-					newdiv.appendChild(text);
-					myphoto.appendChild(newdiv);
-				};
-				req.send();
+				let req="https://padax.github.io/taipei-day-trip-resources/taipei-attractions.json";
+					fetch(req).then(function(response){
+						return response.json();
+					}).then(function(result){
+						//console.log("資料",result); 用來檢查是否成功抓取
+						let product;
+						for(let i=0;i<8;i++){
+							for(let j=0;j<8;j++){
+								if(i == j){
+								imgstitle = result["result"]["results"][i]["stitle"];
+								imgsfile = result["result"]["results"][j]["file"];
+								imgsfile = imgsfile.split("http");
+								imgsfile = ("http"+imgsfile[1]);
+								console.log(imgsfile);
+								let myphoto = document.getElementById("photo");
+								let newdiv = document.createElement("div");
+								let newimg = document.createElement("img");
+								let imgfile = newimg.setAttribute('"'+imgsfile+'"');
+								let text = document.createTextNode(imgstitle);
+								newdiv.className = "content"
+								newdiv.appendChild(newimg);
+								newdiv.appendChild(text);
+								myphoto.appendChild(newdiv);
+						}}}						
+					})
 			}
 		</script>
     </body>
