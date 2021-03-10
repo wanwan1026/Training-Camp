@@ -110,16 +110,20 @@
 			    flex:none; 
                 width:240px; 
 			    margin:10px;
+				margin-bottom: 30px;
+				background-color:#afdfe4;
 		    }
             img{
 			    max-height: 100%; 
-			    max-width: 100%; 
+			    max-width: 100%;
 	    	}
             @media (max-width:1200px){
                 .main{width:100%;} 
 			    main>.content{
-				    width:45%; 
+				    width:45%;
+					
 			    }
+
 		    }
 		    @media (max-width:600px){
 			    .main{width:100%;}
@@ -160,7 +164,6 @@
 					fetch(req).then(function(response){
 						return response.json();
 					}).then(function(result){
-						//console.log("資料",result); 用來檢查是否成功抓取
 						let product;
 						for(let i=0;i<8;i++){
 							for(let j=0;j<8;j++){
@@ -173,9 +176,11 @@
 								let myphoto = document.getElementById("photo");
 								let newdiv = document.createElement("div");
 								let newimg = document.createElement("img");
-								let imgfile = newimg.setAttribute('"'+imgsfile+'"');
+								let imgfile = newimg.setAttribute("src",imgsfile);
 								let text = document.createTextNode(imgstitle);
+								myphoto.className = "main"
 								newdiv.className = "content"
+								newimg.setAttribute('style','width: 100%;height: 80%;');
 								newdiv.appendChild(newimg);
 								newdiv.appendChild(text);
 								myphoto.appendChild(newdiv);
